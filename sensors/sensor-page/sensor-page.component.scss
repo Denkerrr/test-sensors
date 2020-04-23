@@ -1,0 +1,39 @@
+.grid-sensors {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 15px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+
+  &__item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+    border: solid 1px #363636;
+    padding: 0 5px;
+    border-radius: 10px;
+    height: 40px;
+
+    .name{
+      color: #0c78e1;
+    }
+
+  }
+
+}
+
+.auto-updates{
+  display: inline-flex;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+
+  button {
+    margin-left: 20px;
+  }
+
+}
+

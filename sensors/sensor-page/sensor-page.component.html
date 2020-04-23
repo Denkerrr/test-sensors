@@ -1,0 +1,31 @@
+<div class="page">
+
+    <div class="title">Sensors</div>
+
+        <div class="grid-sensors" #scrollContainer (scroll)="scrollLoading()">
+
+            <div *ngFor="let item of dataService.displaySensors; trackBy: trackValue"
+                 class="grid-sensors__item">
+
+                <a class="name" routerLink="sensor/{{ item.key }}"> {{ item.key }} </a>
+
+                <div class="value"> {{ item.value }} </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+<div class="auto-updates">
+
+    <label for="update">Автообновление</label>
+
+    <input id="update" type="checkbox" [checked]="autoUpdates" (change)="changeUpdateState()">
+
+    <button *ngIf="!autoUpdates"
+            (click)="dataService.changeRandomSensor()">
+        Обновить
+    </button>
+
+</div>
